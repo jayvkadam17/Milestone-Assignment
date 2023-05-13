@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Examples</title>
+  <script>
+    // Task 1: Password Validator
+    function validatePassword(password, confirmPassword) {
+      if (password === confirmPassword) {
+        console.log("Task 1: Password Matched. Password validation Successful.");
+      } else {
+        console.log("Task 1: Password didn't match. Password validation unsuccessful");
+      }
+    }
+
+    const password = "password123";
+    const confirmPassword = "password123";
+    validatePassword(password, confirmPassword);
+
+    // Task 2: Calculator
+    function calculator(num1, num2, operator) {
+      let result;
+
+      switch (operator) {
+        case "+":
+          result = num1 + num2;
+          break;
+        case "-":
+          result = num1 - num2;
+          break;
+        case "*":
+          result = num1 * num2;
+          break;
+        case "/":
+          result = num1 / num2;
+          break;
+        default:
+          console.log("Task 2: Invalid operator");
+          return;
+      }
+
+      console.log("Task 2: Result =", result);
+    }
+
+    const num1 = 10;
+    const num2 = 5;
+    const operator = "+";
+    calculator(num1, num2, operator);
+
+    // Task 3: Color Mixer
+    function mixColors(color1, color2) {
+      let resultingColor;
+
+      switch (color1) {
+        case "red":
+          if (color2 === "blue") {
+            resultingColor = "purple";
+          } else if (color2 === "yellow") {
+            resultingColor = "orange";
+          }
+          break;
+        case "blue":
+          if (color2 === "red") {
+            resultingColor = "purple";
+          } else if (color2 === "yellow") {
+            resultingColor = "green";
+          }
+          break;
+        case "yellow":
+          if (color2 === "red") {
+            resultingColor = "orange";
+          } else if (color2 === "blue") {
+            resultingColor = "green";
+          }
+          break;
+      }
+
+      if (resultingColor) {
+        console.log("Task 3: Resulting Color =", resultingColor);
+      } else {
+        console.log("Task 3: Invalid color combination");
+      }
+    }
+
+    const color1 = "red";
+    const color2 = "blue";
+    mixColors(color1, color2);
+
+    // Task 4: Highest Marks
+    function findHighestMarks(marks) {
+      const highestMarks = Math.max(...marks);
+      console.log("Task 4: Highest Marks =", highestMarks);
+    }
+
+    const marks = [80, 75, 90, 85, 95];
+    findHighestMarks(marks);
+
+    // Task 5: Capitalize
+    function capitalizeName(name) {
+      const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+      console.log("Task 5: Capitalized Name =", capitalized);
+    }
+
+    const userName = "john";
+    capitalizeName(userName);
+
+    // Task 6: Vowel Counter
+    function countVowels(name) {
+      let count = 0;
+      const vowels = ["a", "e", "i", "o", "u"];
+
+      for (let i = 0; i < name.length; i++) {
+        if (vowels.includes(name[i].toLowerCase())) {
+          count++;
+        }
+      }
+
+      console.log("Task 6: Number of Vowels =", count);
+    }
+
+    const personName = "John Doe
+    countVowels(personName);
+
+    // Task 7: Remove Duplicates
+    function removeDuplicates(cart) {
+      const uniqueItems = Array.from(new Set(cart));
+      console.log("Task 7: Updated Cart =", uniqueItems);
+    }
+
+    const cart = ["item1", "item2", "item1", "item3", "item2"];
+    removeDuplicates(cart);
+
+    // Task 8: Inverted Right-Angled Triangle Pattern with Asterisks
+    function printInvertedTriangle(rows) {
+      let pattern = "";
+
+      for (let i = rows; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+          pattern += "*";
+        }
+        pattern += "\n";
+      }
+
+      console.log("Task 8: Inverted Right-Angled Triangle Pattern:");
+      console.log(pattern);
+    }
+
+    const numRows = 6;
+    printInvertedTriangle(numRows);
+
+    // Task 9: Check for Divisibility
+    function checkDivisibility(numbers) {
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 3 === 0 && numbers[i] % 2 !== 0) {
+          console.log("Task 9: Number divisible by 3 but not by 2:", numbers[i]);
+        }
+      }
+    }
+
+    const numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    checkDivisibility(numberList);
+
+    // Task 10: Correct a Bug
+    function correctQuantityBug(cart) {
+      const correctedCart = cart.map(quantity => quantity * 2);
+      console.log("Task 10: Corrected Cart =", correctedCart);
+    }
+
+    const itemsInCart = [1, 2, 3, 4, 5];
+    correctQuantityBug(itemsInCart);
+
+    // Task 11: Unit Converter
+    function convertCelsiusToFahrenheit(celsius) {
+      const fahrenheit = (celsius * 9) / 5 + 32;
+      console.log("Task 11: Fahrenheit =", fahrenheit);
+    }
+
+    const celsiusTemperature = 30;
+    convertCelsiusToFahrenheit(celsiusTemperature);
+
+    // Task 12: Calculate Rental Cost
+    function calculateRentalCost(daysRented, carType) {
+      let rentalCost;
+
+      switch (carType) {
+        case "Economy":
+          rentalCost = 4000;
+          break;
+        case "Midsize":
+          rentalCost = 15000;
+          break;
+        case "Luxury":
+          rentalCost = 20000;
+          break;
+        default:
+          console.log("Task 12: Invalid car type");
+          return;
+      }
+
+      const totalCost = rentalCost * daysRented;
+      console.log("Task 12: Total Cost =", totalCost);
+    }
+
+    const daysRented = 5;
+    const carType = "Economy";
+    calculateRentalCost(daysRented, carType);
+  </script>
+</head>
+<body>
+</body>
+</html>
