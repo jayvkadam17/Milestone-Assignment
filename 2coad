@@ -1,0 +1,269 @@
+Certainly! Here are the solutions to the tasks you mentioned:
+
+13. Bill splitter:
+```javascript
+function calculateBill(dishCosts, numberOfPeople) {
+  const totalBill = dishCosts.reduce((sum, cost) => sum + cost, 0);
+  const billPerPerson = totalBill / numberOfPeople;
+
+  return { totalBill, billPerPerson };
+}
+
+// Example usage:
+const dishCosts = [20, 15, 12, 18];
+const numberOfPeople = 4;
+const billSplit = calculateBill(dishCosts, numberOfPeople);
+console.log(billSplit);
+```
+
+14. Calculate the final order price:
+```javascript
+const calculateTotalCost = (cart) => {
+  const totalPrice = cart.reduce((sum, item) => sum + (item.unitPrice * item.quantity), 0);
+  return totalPrice;
+};
+
+// Example usage:
+const cart = [
+  { unitPrice: 10, quantity: 2 },
+  { unitPrice: 5, quantity: 3 },
+  { unitPrice: 8, quantity: 1 },
+];
+const totalCost = calculateTotalCost(cart);
+console.log(totalCost);
+```
+
+15. Calculate the percentage of the discount:
+```javascript
+const calculateDiscountPercentage = (originalPrice, discountedPrice) => {
+  const discountAmount = originalPrice - discountedPrice;
+  const discountPercentage = (discountAmount / originalPrice) * 100;
+  return discountPercentage.toFixed(2);
+};
+
+// Example usage:
+const originalPrice = 50;
+const discountedPrice = 30;
+const discountPercentage = calculateDiscountPercentage(originalPrice, discountedPrice);
+console.log(discountPercentage);
+```
+
+16. Generate a random number:
+```javascript
+(() => {
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  console.log(randomNumber);
+})();
+```
+
+17. Build a banking application:
+```javascript
+const customer = {
+  name: "John Doe",
+  balance: 1000,
+  deposit(amount) {
+    this.balance += amount;
+    console.log(`Deposited ${amount}. New balance is ${this.balance}.`);
+  },
+  withdraw(amount) {
+    if (this.balance >= amount) {
+      this.balance -= amount;
+      console.log(`Withdrawn ${amount}. New balance is ${this.balance}.`);
+    } else {
+      console.log("Insufficient balance.");
+    }
+  }
+};
+
+// Example usage:
+customer.deposit(500);
+customer.withdraw(200);
+```
+
+18. Change Text on Button click:
+HTML:
+```html
+<h1 id="heading">The most affordable learning platform</h1>
+<button id="toggleButton">Toggle Text</button>
+```
+JavaScript:
+```javascript
+const heading = document.getElementById("heading");
+const toggleButton = document.getElementById("toggleButton");
+
+toggleButton.addEventListener("click", () => {
+  if (heading.textContent === "The most affordable learning platform") {
+    heading.textContent = "PW Skills";
+  } else {
+    heading.textContent = "The most affordable learning platform";
+  }
+});
+```
+
+19. Validate Password:
+HTML:
+```html
+<form id="loginForm">
+  <label>Email:</label>
+  <input type="text" id="emailInput" required>
+  <br>
+  <label>Password:</label>
+  <input type="password" id="passwordInput" required>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<p id="message"></p>
+```
+JavaScript:
+```javascript
+const loginForm = document.getElementById("loginForm");
+const emailInput = document.getElementById("emailInput");
+const passwordInput = document.getElementById("passwordInput");
+const message = document.getElementById("message");
+
+loginForm.addEventListener("submit", (
+Sure! Here are the solutions to the tasks you mentioned:
+
+20. Dynamically Adding List Items to an Ordered List:
+HTML:
+```html
+<button id="addItemButton">Add Item</button>
+<ol id="list"></ol>
+```
+
+JavaScript:
+```javascript
+const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
+const addItemButton = document.getElementById("addItemButton");
+const list = document.getElementById("list");
+let currentItemIndex = 0;
+
+addItemButton.addEventListener("click", () => {
+  if (currentItemIndex < items.length) {
+    const newItem = document.createElement("li");
+    newItem.textContent = items[currentItemIndex];
+    list.appendChild(newItem);
+    currentItemIndex++;
+  } else {
+    alert("All items have been added!");
+  }
+});
+```
+
+21. TODO App:
+HTML:
+```html
+<input type="text" id="todoInput">
+<button id="addTodoButton">Add Todo</button>
+<ul id="todoList"></ul>
+```
+
+JavaScript:
+```javascript
+const todoInput = document.getElementById("todoInput");
+const addTodoButton = document.getElementById("addTodoButton");
+const todoList = document.getElementById("todoList");
+
+addTodoButton.addEventListener("click", () => {
+  const todoText = todoInput.value.trim();
+
+  if (todoText !== "") {
+    const newTodo = document.createElement("li");
+    newTodo.textContent = todoText;
+    todoList.appendChild(newTodo);
+    todoInput.value = "";
+  }
+});
+```
+
+22. Progress Bar:
+HTML:
+```html
+<div id="progressBar"></div>
+```
+
+CSS:
+```css
+#progressBar {
+  width: 0;
+  height: 10px;
+  background-color: blue;
+}
+```
+
+JavaScript:
+```javascript
+const progressBar = document.getElementById("progressBar");
+
+window.addEventListener("scroll", () => {
+  const scrollHeight = document.documentElement.scrollHeight;
+  const clientHeight = document.documentElement.clientHeight;
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+
+  progressBar.style.width = scrollPercentage + "%";
+});
+```
+
+23. Change the color on click:
+HTML:
+```html
+<button id="colorButton">Change Color</button>
+```
+
+JavaScript:
+```javascript
+const colors = ["red", "green", "blue", "yellow", "orange"];
+const colorButton = document.getElementById("colorButton");
+
+colorButton.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  document.body.style.backgroundColor = colors[randomIndex];
+});
+```
+
+24. Text Highlighting:
+HTML:
+```html
+<p id="paragraph">This is a sample paragraph with some words that are longer than 8 characters.</p>
+```
+
+JavaScript:
+```javascript
+const paragraph = document.getElementById("paragraph");
+const words = paragraph.textContent.split(" ");
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i].length > 8) {
+    const span = document.createElement("span");
+    span.textContent = words[i];
+    span.style.backgroundColor = "yellow";
+    paragraph.replaceChild(span, paragraph.childNodes[i]);
+  }
+}
+```
+
+25. Move the Image:
+HTML:
+```html
+<img id="image" src="image.jpg" alt="Moving Image">
+```
+
+CSS:
+```css
+#image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+```
+
+JavaScript:
+```javascript
+const image = document.getElementById("image");
+let positionX = 0;
+let positionY = 0;
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowUp") {
+   
